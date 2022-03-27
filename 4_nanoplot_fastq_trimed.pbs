@@ -1,0 +1,22 @@
+#!/bin/bash -l
+#PBS -l walltime=4:00:00
+#PBS -l mem=10gb
+#PBS -l nodes=1:ppn=2
+#PBS -M yan.zhao1@student.kuleuven.be
+#PBS -m eab
+#PBS -A lp_joris_vermeesch_c1
+
+module load Python/3.7.2-foss-2018a  
+
+PROJECT_DIR="/lustre1/project/stg_00019/research/yan/nanopore_data/2_sc_PTA";
+SAMPLE_DIR="$PROJECT_DIR/3_nanofilt_trimmed";
+OUTPUT_DIR="$PROJECT_DIR/4_nanoplot_fastq_trimmed";
+mkdir -p $OUTPUT_DIR;
+
+conda activate nanoplot
+
+fastq=`ls $SAMPLE_DIR/*.fastq.gz`
+
+NanoPlot --fastq $fastq \
+    -o $OUTPUT_DIR \
+    -t 18

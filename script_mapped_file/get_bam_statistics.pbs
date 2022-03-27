@@ -1,0 +1,27 @@
+#!/bin/bash -l
+#PBS -l walltime=10:00:00
+#PBS -l mem=10gb
+#PBS -l nodes=1:ppn=2
+#PBS -M yan.zhao1@student.kuleuven.be
+#PBS -m eab
+#PBS -A lp_joris_vermeesch_c1
+
+module load SAMtools/1.9-GCC-6.4.0-2.28
+
+SAMPLE="HG002_sc_PTA"
+bam_path="/lustre1/project/stg_00019/research/yan/nanopore_data/2_sc_PTA/5_mapped"
+cd $bam_path
+
+# samtools flagstat
+samtools_flagstat=`samtools flagstat $SAMPLE.trimmed.sorted.bam`
+
+# get num of chimeric reads
+num_read_chimera=`samtools view -f 0x800 $SAMPLE.trimmed.sorted.bam|cut -f1|sort|uniq|wc -l`
+
+# get num of multimapped reads
+num_read_multimapping=`samtools view -f 256 $SAMPLE.trimmed.sorted.bam|cut -f1|sort|uniq|wc -l`
+
+# get num of unmapped reads （flag为4）
+num_read_unmapped=`samtools view -f 4 $SAMPLE.trimmed.sorted.bam|wc -l`
+
+echo -e "samtools_flagstat\n" $samtools_flagstat "\n\nnum_read_chimera" $num_read_chimera "\nnum_read_multimapping" $num_read_multimapping "\nnum_read_unmapped" $num_read_unmapped > $SAMPLE.bam.stats.txt

@@ -1,0 +1,18 @@
+#!/bin/bash -l
+#PBS -l walltime=24:00:00
+#PBS -l mem=60gb
+#PBS -l nodes=1:ppn=12
+#PBS -M yan.zhao1@student.kuleuven.be
+#PBS -m eab
+#PBS -A lp_joris_vermeesch_c1
+
+module load SAMtools/1.9-GCC-6.4.0-2.28
+
+dir=/lustre1/project/stg_00019/research/yan/nanopore_data/sc_repli-g/5_mapped
+cd $dir
+
+#check flag changed bamfile 
+echo "flagstat_of_flag_changed_bam"
+samtools flagstat nodup_flag_changed_HG002_sc.trimmed.sorted.bam
+echo "flag_2048_sup_in_flag_changed_bam"
+samtools view -c -f 0X800 nodup_flag_changed_HG002_sc.trimmed.sorted.bam

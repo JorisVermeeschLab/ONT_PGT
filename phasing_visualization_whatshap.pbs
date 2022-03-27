@@ -1,0 +1,33 @@
+#!/bin/bash -l
+#PBS -l walltime=6:00:00
+#PBS -l mem=10gb
+#PBS -l nodes=1:ppn=2
+#PBS -M yan.zhao1@student.kuleuven.be
+#PBS -m eab
+#PBS -A lp_joris_vermeesch_c1
+
+SAMPLE="HG002_sc_PTA" 
+wkdir="/lustre1/project/stg_00019/research/yan/nanopore_data/2_sc_PTA"
+bamdir="$wkdir/5_mapped"
+phase_dir="$wkdir/6_variant_calling"
+ref="/lustre1/project/stg_00019/genome/homo_sapiens/hg38/genome.fa"
+
+# create a GTF file from a phased VCF file that describes the haplotype blocks.
+
+whatshap stats --gtf=$phase_dir/$SAMPLE.phased_merge_output.gtf $phase_dir/phased_merge_output.vcf.gz>$phase_dir/$SAMPLE.phasing_statistics.txt
+
+
+# The input VCF may have been phased by any program, not only WhatsHap, as long as the phasing info is recorded with a PS or HP tag.
+# you can even phase using one set of reads and then assign haplotypes to an entirely different set of reads (but from the same sample).
+
+#  If you have a single sample only and no or incorrect read group headers, you can run WhatsHap with --ignore-read-groups instead.
+
+whatshap haplotag \
+-o $bamdir/$SAMPLE.trimmed.sorted.haplotagged.bam \
+--reference $ref $phase_dir/phased_merge_output.vcf.gz $bamdir/$SAMPLE.trimmed.sorted.bam
+
+module load SAMtools/1.9-GCC-6.4.0-2.28
+
+cd $bamdir
+
+samtools index $SAMPLE.trimmed.sorted.haplotagged.bam

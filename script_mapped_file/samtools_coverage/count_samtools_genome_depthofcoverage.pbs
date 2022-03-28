@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#PBS -l walltime=10:00:00
+#PBS -l walltime=20:00:00
 #PBS -l mem=10gb
 #PBS -l nodes=1:ppn=2
 #PBS -M yan.zhao1@student.kuleuven.be
@@ -11,44 +11,44 @@ file_path="/lustre1/project/stg_00019/research/yan/nanopore_data/2_sc_PTA/5_mapp
 cd $file_path
 file="$SAMPLE.samtools_depth.txt"
 
-echo -n "total_positions_on_"$SAMPLE; cat $file|wc -l
+echo -n "total_positions_on_"$SAMPLE" "; cat $file|wc -l
 
-echo -n "sum_of_depth_all_position_on_"$SAMPLE; cat $file|awk '{sum+=$3}END{print sum}'
+echo -n "sum_of_depth_all_position_on_"$SAMPLE" "; cat $file|awk '{sum+=$3}END{print sum}'
 
-echo -n "total_positions_with_depth=0_on_"$SAMPLE; cat $file|awk '{if($3==0)print}'|wc -l
+echo -n "total_positions_with_depth=0_on_"$SAMPLE" "; cat $file|awk '{if($3==0)print}'|wc -l
 
-echo -n "total_positions_with_depth>5_on_"$SAMPLE; cat $file|awk '{if($3>5)print}'|wc -l
+echo -n "total_positions_with_depth>5_on_"$SAMPLE" "; cat $file|awk '{if($3>5)print}'|wc -l
 
-echo -n "total_positions_with_depth>10_on_"$SAMPLE; cat $file|awk '{if($3>10)print}'|wc -l
+echo -n "total_positions_with_depth>10_on_"$SAMPLE" "; cat $file|awk '{if($3>10)print}'|wc -l
 
-echo -n "total_positions_with_depth>15_on_"$SAMPLE; cat $file|awk '{if($3>15)print}'|wc -l
+echo -n "total_positions_with_depth>15_on_"$SAMPLE" "; cat $file|awk '{if($3>15)print}'|wc -l
 
-echo -n "total_positions_with_depth>20_on_"$SAMPLE; cat $file|awk '{if($3>20)print}'|wc -l
+echo -n "total_positions_with_depth>20_on_"$SAMPLE" "; cat $file|awk '{if($3>20)print}'|wc -l
 
-echo -n "total_positions_with_depth>25_on_"$SAMPLE; cat $file|awk '{if($3>25)print}'|wc -l
+echo -n "total_positions_with_depth>25_on_"$SAMPLE" "; cat $file|awk '{if($3>25)print}'|wc -l
 
-echo -n "total_positions_with_depth>30_on_"$SAMPLE; cat $file|awk '{if($3>30)print}'|wc -l
+echo -n "total_positions_with_depth>30_on_"$SAMPLE" "; cat $file|awk '{if($3>30)print}'|wc -l
 
-echo -n "total_positions_with_depth>100_on_"$SAMPLE; cat $file|awk '{if($3>100)print}'|wc -l
+echo -n "total_positions_with_depth>100_on_"$SAMPLE" "; cat $file|awk '{if($3>100)print}'|wc -l
 
-echo -n "total_positions_with_depth>200_on_"$SAMPLE; cat $file|awk '{if($3>200)print}'|wc -l
+echo -n "total_positions_with_depth>200_on_"$SAMPLE" "; cat $file|awk '{if($3>200)print}'|wc -l
 
 for i in 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22
 do
-	echo -n "total_positions_on_chr_"$i; cat $file |awk '{if($1=='''$i''')print}'|wc -l
-	echo -n "total_positions_with_depth=0_on_chr"$i; cat $file |awk '{if($1=='''$i''')print}'|awk '{if($3==0)print}'|wc -l
-	echo -n "sum_of_depth_all_position_on_chr"$i; cat $file|awk '{if($1=='''$i''')print}'|awk '{sum+=$3}END{print sum}'
+	echo -n "total_positions_on_chr_"$i" "; cat $file |awk '{if($1=='''$i''')print}'|wc -l
+	echo -n "total_positions_with_depth=0_on_chr"$i" "; cat $file |awk '{if($1=='''$i''')print}'|awk '{if($3==0)print}'|wc -l
+	echo -n "sum_of_depth_all_position_on_chr"$i" "; cat $file|awk '{if($1=='''$i''')print}'|awk '{sum+=$3}END{print sum}'
 done
 
-echo -n "total_positions_on_chr_X"; cat $file |awk '{if($1=="X")print}'|wc -l
-echo -n "total_positions_with_depth=0_on_chr_X"; cat $file |awk '{if($1=="X")print}'|awk '{if($3==0)print}'|wc -l
-echo -n "sum_of_depth_all_position_on_chr_X"; cat $file|awk '{if($1=="X")print}'|awk '{sum+=$3}END{print sum}'
+echo -n "total_positions_on_chr_X "; cat $file |awk '{if($1=="X")print}'|wc -l
+echo -n "total_positions_with_depth=0_on_chr_X "; cat $file |awk '{if($1=="X")print}'|awk '{if($3==0)print}'|wc -l
+echo -n "sum_of_depth_all_position_on_chr_X "; cat $file|awk '{if($1=="X")print}'|awk '{sum+=$3}END{print sum}'
 
-echo -n "total_positions_on_chr_Y"; cat $file |awk '{if($1=="Y")print}'|wc -l
-echo -n "total_positions_with_depth=0_on_chr_Y"; cat $file |awk '{if($1=="Y")print}'|awk '{if($3==0)print}'|wc -l
-echo -n "sum_of_depth_all_position_on_chr_Y"; cat $file|awk '{if($1=="Y")print}'|awk '{sum+=$3}END{print sum}'
+echo -n "total_positions_on_chr_Y "; cat $file |awk '{if($1=="Y")print}'|wc -l
+echo -n "total_positions_with_depth=0_on_chr_Y "; cat $file |awk '{if($1=="Y")print}'|awk '{if($3==0)print}'|wc -l
+echo -n "sum_of_depth_all_position_on_chr_Y "; cat $file|awk '{if($1=="Y")print}'|awk '{sum+=$3}END{print sum}'
 
-echo -n "total_positions_on_chr_MT"; cat $file |awk '{if($1=="MT")print}'|wc -l
-echo -n "total_positions_with_depth=0_on_chr_MT"; cat $file |awk '{if($1=="MT")print}'|awk '{if($3==0)print}'|wc -l
-echo -n "sum_of_depth_all_position_on_chr_MT"; cat $file|awk '{if($1=="MT")print}'|awk '{sum+=$3}END{print sum}'
+echo -n "total_positions_on_chr_MT "; cat $file |awk '{if($1=="MT")print}'|wc -l
+echo -n "total_positions_with_depth=0_on_chr_MT "; cat $file |awk '{if($1=="MT")print}'|awk '{if($3==0)print}'|wc -l
+echo -n "sum_of_depth_all_position_on_chr_MT "; cat $file|awk '{if($1=="MT")print}'|awk '{sum+=$3}END{print sum}'
 

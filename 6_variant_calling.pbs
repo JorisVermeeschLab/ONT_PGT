@@ -1,7 +1,7 @@
 #!/bin/bash -l
-#PBS -l walltime=30:00:00
-#PBS -l mem=10gb
-#PBS -l nodes=1:ppn=2
+#PBS -l walltime=40:00:00
+#PBS -l mem=60gb
+#PBS -l nodes=1:ppn=15
 #PBS -M yan.zhao1@student.kuleuven.be
 #PBS -m eab
 #PBS -A lp_joris_vermeesch_c1

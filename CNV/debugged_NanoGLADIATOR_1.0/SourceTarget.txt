@@ -1,0 +1,1 @@
+/vsc-hard-mounts/leuven-data/339/vsc33900/A00_software/NanoGLADIATOR_1.0/data/GCA_000001405.15_GRCh38.bw /lustre1/project/stg_00019/genome/homo_sapiens/hg38/genome.fa 

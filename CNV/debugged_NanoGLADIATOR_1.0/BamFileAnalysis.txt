@@ -1,0 +1,5 @@
+T1 /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/mc_PTA mc_PTA
+T2 /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/bulk bulk
+T3 /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/sc_repli-g sc_repli-g
+T4 /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/sc_PTA sc_PTA
+T5 /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/mc_repli-g mc_repli-g

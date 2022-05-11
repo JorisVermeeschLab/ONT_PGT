@@ -1,0 +1,1 @@
+/lustre1/project/stg_00019/research/yan/nanopore_data/4_mc_PTA/5_mapped/HG002_mc_PTA.trimmed.sorted.bam /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/mc_PTA mc_PTA

@@ -13,4 +13,4 @@ bam_path="/lustre1/project/stg_00019/research/yan/nanopore_data/2_sc_PTA/5_mappe
 
 cd $bam_path
 
-samtools depth -a $SAMPLE.trimmed.sorted.bam > $SAMPLE.samtools_depth.txt
+samtools depth -aa $SAMPLE.trimmed.sorted.bam > $SAMPLE.samtools_depth.txt

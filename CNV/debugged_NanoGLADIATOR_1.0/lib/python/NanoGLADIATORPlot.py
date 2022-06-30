@@ -1,7 +1,8 @@
 import os, sys
-import random
+# import random
 import csv
-from numpy import random, argmax, diff, mean
+# from numpy import random, argmax, diff, mean
+from numpy import argmax, diff, mean
 import plotly
 import plotly.graph_objs as go
 from plotly import tools

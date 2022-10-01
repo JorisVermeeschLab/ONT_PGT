@@ -17,6 +17,8 @@ conda activate nanoplot
 
 bam=`ls $SAMPLE_DIR/*.trimmed.sorted.bam`
 
+# use    --huge  if the input is a huge bam file
+
 NanoPlot --bam $bam \
     -o $OUTPUT_DIR \
     -t 18

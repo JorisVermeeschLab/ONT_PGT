@@ -67,13 +67,14 @@ bcftools merge filtered.ref_added.trio.HG002.vcf.gz $filtered_HG003_vcf_with_ref
 WHATSHAP_DIR="/vsc-hard-mounts/leuven-data/339/vsc33900/miniconda3/envs/clair3/bin/"
 REF="/lustre1/project/stg_00019/research/yan/nanopore_data/00_06_T2T-CHM13v1.0/chm13.draft_v1.0.fasta"
 chr_len="/lustre1/project/stg_00019/research/yan/nanopore_data/00_06_T2T-CHM13v1.0/chr_len.txt"
-BAM_SON="/lustre1/project/stg_00019/research/yan/nanopore_data/01_01_data_LSK110_HG002/7_sc_MDA_24x_LSK110/6_change_bamRG/sc_MDA_24x_LSK110.sorted.mod.rg.bam"
+BAM_SON="xx"
 BAM_F="/lustre1/project/stg_00019/research/yan/nanopore_data/00_04_resource_parental_nanopore_data/GM24149/6_CHM13v1.0/GM24149.sorted.bam"
 BAM_M="/lustre1/project/stg_00019/research/yan/nanopore_data/00_04_resource_parental_nanopore_data/GM24143/6_CHM13v1.0/GM24143.sorted.bam"
 
-name_HG002=`samtools view -H $BAM_SON|grep ^@RG|cut -f 5|awk -F "SM:" '{print $2}'`
-name_HG003=`samtools view -H $BAM_F|grep ^@RG|cut -f 5|awk -F "SM:" '{print $2}'`
-name_HG004=`samtools view -H $BAM_M|grep ^@RG|cut -f 5|awk -F "SM:" '{print $2}'`
+# RG field for SM might change; test before run the whole script 
+name_HG002=`samtools view -H $BAM_SON|grep ^@RG|cut -f 3|awk -F "SM:" '{print $2}'`
+name_HG003=`samtools view -H $BAM_F|grep ^@RG|cut -f 3|awk -F "SM:" '{print $2}'`
+name_HG004=`samtools view -H $BAM_M|grep ^@RG|cut -f 3|awk -F "SM:" '{print $2}'`
 
 echo -e $name_HG002"\n"$name_HG003"\n"$name_HG004>names.txt
 bcftools reheader --samples names.txt pedgree_merged_with_ref.vcf> pedgree_merged_with_ref.reheader.vcf

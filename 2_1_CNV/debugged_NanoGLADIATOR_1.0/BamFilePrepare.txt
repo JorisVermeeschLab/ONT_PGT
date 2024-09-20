@@ -1,5 +1,0 @@
-/lustre1/project/stg_00019/research/yan/nanopore_data/4_mc_PTA/5_mapped/HG002_mc_PTA.trimmed.sorted.bam /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/mc_PTA mc_PTA
-/lustre1/project/stg_00019/research/yan/nanopore_data/0_bulk_HG002/5_mapped/bulk_HG002.trimmed.sorted.bam /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/bulk bulk
-/lustre1/project/stg_00019/research/yan/nanopore_data/1_sc_repli-g/5_mapped/HG002_sc.trimmed.sorted.bam /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/sc_repli-g sc_repli-g
-/lustre1/project/stg_00019/research/yan/nanopore_data/2_sc_PTA/5_mapped/HG002_sc_PTA.trimmed.sorted.bam /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/sc_PTA sc_PTA
-/lustre1/project/stg_00019/research/yan/nanopore_data/3_mc_repli-g/5_mapped/HG002_mc_repli-g.trimmed.sorted.bam /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/hg38w1000000/mc_repli-g mc_repli-g

@@ -1,1 +1,0 @@
-T1 /lustre1/project/stg_00019/research/yan/nanopore_data/CNV_analysis/mc_PTA mc_PTA

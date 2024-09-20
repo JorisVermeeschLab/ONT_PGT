@@ -1,9 +1,0 @@
-/home/alberto/NanoGLADIATOR/FileNA12878/FAF01132.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAF01132 FAF01132
-/home/alberto/NanoGLADIATOR/FileNA12878/FAF01127.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAF01127 FAF01127
-/home/alberto/NanoGLADIATOR/FileNA12878/FAB49712.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAB49712 FAB49712
-/home/alberto/NanoGLADIATOR/FileNA12878/FAB42451.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAB42451 FAB42451
-/home/alberto/NanoGLADIATOR/FileNA12878/FAB49164.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAB49164 FAB49164
-/home/alberto/NanoGLADIATOR/FileNA12878/FAF01253.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAF01253 FAF01253
-/home/alberto/NanoGLADIATOR/FileNA12878/FAB45271.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAB45271 FAB45271
-/home/alberto/NanoGLADIATOR/FileNA12878/FAB44989.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAB44989 FAB44989
-/home/alberto/NanoGLADIATOR/FileNA12878/FAB42473.srt.bam /home/alberto/NanoGLADIATOR/FileNA12878/Prepare/FAB42473 FAB42473
